@@ -406,15 +406,15 @@ So when a new person is added, all of its details are sent to all subscribers.
 First, we have to install two packages for adding subscriptions to GraphQL:
 
 ```
-npm install graphql-subscriptions graphql-ws
+npm install ws graphql-ws
 ```
 
 The file <i>index.js</i> is changed to
 
 ```js
 // highlight-start
-const { execute, subscribe } = require('graphql')
-const { SubscriptionServer } = require('graphql-ws')
+const { WebSocketServer } = require('ws')
+const { useServer } = require('graphql-ws/lib/use/ws')
 // highlight-end
 
 // ...
